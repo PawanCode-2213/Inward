@@ -30,16 +30,17 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
+
 }
 
 .logo_image img {
-    width: 50px; /* As per your HTML */
-    height: 50px; /* As per your HTML */
+    width: 80px; /* As per your HTML */
+    height: 80px; /* As per your HTML */
     margin-right: 10px; /* Space between image and name */
 }
 
 
-/* In your style.css */
+/* In your style.css */ 
 /* In your style.css */
 .logoname {
     font-family: 'Montserrat', sans-serif;
