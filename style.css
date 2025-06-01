@@ -38,16 +38,25 @@ body {
     margin-right: 10px; /* Space between image and name */
 }
 
+
+/* In your style.css */
+/* In your style.css */
 .logoname {
-    font-family: 'Montserrat', sans-serif; /* Montserrat for logo name */
-    font-size: 1.5em; /* Larger font size for logo name */
-    font-weight: 700; /* Bold */
-    color: #2a6cb4; /* A nice blue color */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    font-weight: 800;
+    /* Gradient text */
+    background: linear-gradient(45deg, #4d05ac, #49c8f3); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-emphasis-color: transparent; /* For non-webkit browsers */
+    display: inline-block; /* Necessary for background-clip to work well */
 }
 
 .nav-links {
     list-style: none; /* Remove default bullet points */
-    display: flex;
+    display: flex !important;
     margin: 0;
     padding: 0;
 }
@@ -103,40 +112,47 @@ body {
     .logoname {
         font-size: 1.2em; /* Slightly smaller logo name on mobile */
     }
-
     .nav-links {
-        display: none; /* Hide nav links by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position them absolutely for overlay effect */
-        top: 70px; /* Position below the header (adjust if header height changes) */
-        left: 0;
-        width: 100%;
-        background-color: #fff; /* White background for mobile menu */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        padding: 10px 0; /* Padding for the mobile menu items */
+        position: fixed;
+        top: 0;
+        right: -250px; /* Start hidden offscreen to the right */
+        height: 100vh;
+        width: 200px;
+        background-color: #1D4ED8;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        padding-top: 70px; /* Push down menu items below header */
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        transition: right 0.3s ease;
+        z-index: 1001;
     }
 
-    .nav-links.active { /* Class to show the mobile menu */
-        display: flex;
+    .nav-links.active {
+        right: 0; /* Slide in */
     }
 
     .nav-links li {
-        margin: 10px 20px; /* Adjust margin for vertical layout */
-        text-align: center;
+        margin: 15px 20px;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        color: white;
     }
 
     .contact-button {
-        display: none; /* Hide contact button in nav on mobile, can be added to menu */
-        /* If you want it in the mobile menu: */
-        /* margin: 15px auto; 
-        display: block;
-        width: fit-content; */
+        display: none; /* Hide by default on small screen */
     }
-    
-    .menu-icon { /* Show hamburger icon on mobile */
-        display: block; 
+
+    .menu-icon {
+        display: block;
+        z-index: 1002;
     }
 }
+
 
 
 /* === Hero Section Animation (from previous version, kept for reference) === */
@@ -502,6 +518,7 @@ textarea.form-input {
 .footer-column-title {
     font-size: 1.25rem; /* text-lg */
     font-weight: 700; /* font-bold */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff; /* White title */
     margin-bottom: 1rem; /* mb-4 */
     text-transform: uppercase;
@@ -544,7 +561,7 @@ textarea.form-input {
 }
 
 .footer-link:hover {
-    color: #05fef6; /* Tailwind amber-400 or choose an orange */
+    color: #037a29; /* Tailwind amber-400 or choose an orange */
     padding-left: 0.25rem; /* Slight indent on hover */
 }
 
