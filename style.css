@@ -1,0 +1,596 @@
+/* Base body styles (can be combined with Tailwind or kept separate) */
+body {
+    font-family: 'Inter', sans-serif; /* Default font */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+/* === Custom Header Styles (as per your new structure) === */
+.top-header {
+    background-color: #ffffff; /* White background */
+    padding: 10px 5%; /* Padding: 10px top/bottom, 5% left/right */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between; /* Space out logo, name, links, button */
+    align-items: center; /* Vertically align items */
+    max-width: 1200px; /* Max width for content within nav */
+    margin: 0 auto; /* Center the nav content */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image img {
+    width: 50px; /* As per your HTML */
+    height: 50px; /* As per your HTML */
+    margin-right: 10px; /* Space between image and name */
+}
+
+.logoname {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for logo name */
+    font-size: 1.5em; /* Larger font size for logo name */
+    font-weight: 700; /* Bold */
+    color: #2a6cb4; /* A nice blue color */
+}
+
+.nav-links {
+    list-style: none; /* Remove default bullet points */
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 25px; /* Space between nav items */
+}
+
+.nav-links li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark grey color for links */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-links li a:hover {
+    color: #ffa500; /* Orange color on hover */
+}
+
+.contact-button { /* Changed from .get-started to be more specific */
+    background-color: #ffa500; /* Orange background */
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Space from nav links */
+}
+
+.contact-button:hover {
+    background-color: #16a34a; /* Darker orange on hover */
+}
+
+/* Menu Icons (Hamburger/Close) */
+.menu-icon {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+    font-size: 1.8em; /* Size of the icon */
+    color: #333;
+}
+
+#menuClose {
+    display: none; /* Close icon hidden initially */
+}
+
+
+/* Responsive adjustments for the header */
+@media (max-width: 768px) {
+    .logoname {
+        font-size: 1.2em; /* Slightly smaller logo name on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position them absolutely for overlay effect */
+        top: 70px; /* Position below the header (adjust if header height changes) */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* White background for mobile menu */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px 0; /* Padding for the mobile menu items */
+    }
+
+    .nav-links.active { /* Class to show the mobile menu */
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 20px; /* Adjust margin for vertical layout */
+        text-align: center;
+    }
+
+    .contact-button {
+        display: none; /* Hide contact button in nav on mobile, can be added to menu */
+        /* If you want it in the mobile menu: */
+        /* margin: 15px auto; 
+        display: block;
+        width: fit-content; */
+    }
+    
+    .menu-icon { /* Show hamburger icon on mobile */
+        display: block; 
+    }
+}
+
+
+/* === Hero Section Animation (from previous version, kept for reference) === */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Our Services
+
+/* === Services Section Styles === */
+
+
+
+/* Styles for individual service cards */
+.service-card {
+    background-color: #f9fafb; /* Equivalent to Tailwind bg-gray-50 */
+    padding: 1.5rem; /* Equivalent to Tailwind p-6 */
+    border-radius: 0.5rem; /* Equivalent to Tailwind rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to Tailwind shadow-lg */
+    transition-property: box-shadow, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    text-align: center; /* Ensure content within the card is centered */
+}
+
+.service-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Equivalent to Tailwind shadow-xl */
+    transform: translateY(-0.25rem); /* Equivalent to Tailwind hover:-translate-y-1 */
+}
+
+.service-card-icon {
+    color: #0779f3; /* Equivalent to Tailwind text-blue-600 */
+    margin-bottom: 1rem; /* Equivalent to Tailwind mb-4 */
+    font-size: 3rem; /* Equivalent to Tailwind text-5xl, adjust as needed */
+    line-height: 1; /* Ensures icon size is consistent */
+}
+
+.service-card-title {
+    font-size: 1.25rem; /* Equivalent to Tailwind text-xl */
+    font-weight: 600; /* Equivalent to Tailwind font-semibold */
+    color: #4b5563; /* Equivalent to Tailwind text-gray-700 */
+    margin-bottom: 0.75rem; /* Equivalent to Tailwind mb-3 */
+}
+
+.service-card-description {
+    font-size: 0.875rem; /* Equivalent to Tailwind text-sm */
+    color: #050505; /* Equivalent to Tailwind text-gray-600 */
+    line-height: 1.625; /* Equivalent to Tailwind leading-relaxed */
+}
+
+/* Note on Grid Layout:
+   The responsive grid structure (1 column on small, 2 on medium, 3 on large screens) 
+   is primarily handled by Tailwind CSS classes applied directly to the div 
+   with class "service-card-grid" in your HTML:
+   "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
+   This ensures consistency with your existing Tailwind setup.
+*/
+
+/* === About Us Section Styles === */
+
+.about-content-wrapper {
+    max-width: 900px; /* Adjust max-width as needed */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Override parent text-center for better readability of paragraphs */
+}
+
+.about-block {
+    background-color: #ffffff; /* White background for each block */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    margin-bottom: 2rem; /* mb-8, space between blocks */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Tailwind shadow-md */
+}
+
+.about-block-title {
+    font-size: 1.25rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #4b5563; /* A darker blue, similar to text-blue-700 or text-blue-800 */
+    margin-bottom: 1rem; /* mb-4 */
+    display: flex; /* To align icon and text */
+    align-items: center;
+}
+
+.about-icon {
+    margin-right: 0.75rem; /* Space between icon and title text */
+    font-size: 1.3em; /* Slightly larger than title text for emphasis */
+    color: #0779f3; /* text-blue-600 for the icon itself */
+}
+
+.about-block-text {
+    font-size: 1rem; /* text-base */
+    color: #050505; /* text-gray-600 */
+    line-height: 1.75; /* leading-loose for readability */
+}
+
+.about-values-list {
+    list-style: none;
+    padding-left: 0; /* Remove default padding */
+    font-size: 1rem; /* text-base */
+    color: #050505; /* text-gray-600 */
+}
+
+.about-values-list li {
+    margin-bottom: 0.5rem; /* mb-2 */
+    display: flex;
+    align-items: center;
+}
+
+.value-icon {
+    color: #10b981; /* Tailwind green-500 for checkmarks */
+    margin-right: 0.5rem; /* Space between icon and value text */
+    font-size: 1.1em;
+}
+
+/* If you want a different style for the last block or specific blocks */
+.about-block:last-child {
+    margin-bottom: 0;
+}
+
+
+/* === Why Choose Us Section Styles (No JS animation dependency) === */
+
+/* .why-choose-us-grid is styled by Tailwind classes in HTML for layout */
+
+.reason-card {
+    background-color: #f9fafb; /* Tailwind bg-gray-50. If section is bg-gray-50, make this #ffffff */
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    text-align: center;
+    border-left: 4px solid transparent; /* For hover accent */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+    /* Elements are visible by default: opacity and transform for initial hiding are removed */
+}
+
+.reason-card:hover {
+    transform: translateY(-5px) scale(1.03); /* Slightly lift and scale up */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    border-left-color: #2563eb; /* Tailwind text-blue-600 for accent on hover */
+}
+
+.reason-card-icon {
+    font-size: 2.5rem; /* text-4xl */
+    color: #2563eb; /* text-blue-600 */
+    margin-bottom: 1rem; /* mb-4 */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.reason-card:hover .reason-card-icon {
+    transform: rotateY(360deg) scale(1.1); /* Icon rotation on hover */
+}
+
+.reason-card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.reason-card-description {
+    font-size: 0.9rem; 
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.6;
+}
+
+/* Responsive stacking:
+   Tailwind's grid classes (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)
+   handle the stacking on small screens automatically.
+   If you need specific margins for stacked items, you can add them:
+*/
+@media (max-width: 767px) { /* Corresponds to Tailwind's 'md' breakpoint */
+    .reason-card {
+        margin-bottom: 1.5rem; /* Add bottom margin when stacked */
+    }
+    .why-choose-us-grid .reason-card:last-child {
+        margin-bottom: 0; /* No margin for the very last item when stacked */
+    }
+}
+/* If using md:grid-cols-2, you might need to adjust last-child logic for even numbers.
+   However, with `gap` in the grid, explicit bottom margins might be less critical for spacing
+   unless you want more than the gap provides when stacked. The grid `gap` will apply
+   between items when they stack too.
+   The above @media query adds a margin to all cards when stacked, which is fine.
+*/
+
+/* === FAQ Section Styles === */
+
+
+
+.faq-item {
+    background-color: #ffffff; /* White background for each FAQ item */
+    margin-bottom: 1rem; /* Space between FAQ items */
+    border-radius: 0.375rem; /* Tailwind rounded-md */
+    border: 1px solid #e5e7eb; /* Tailwind border-gray-200 */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* Tailwind shadow-sm */
+    transition: margin-bottom 0.3s ease;
+}
+
+.faq-item[open] {
+    margin-bottom: 1.5rem; /* Slightly more space when open */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Tailwind shadow-md when open */
+}
+
+.faq-question {
+    padding: 1rem 1.5rem; /* Py-4 Px-6 */
+    font-weight: 600; /* Tailwind font-semibold */
+    color: #1f2937; /* Tailwind text-gray-800 */
+    cursor: pointer;
+    list-style: none; /* Remove default marker if any */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure summary takes full width */
+}
+
+.faq-question::-webkit-details-marker { /* Hide default marker for Chrome/Safari */
+    display: none;
+}
+
+.faq-question::marker { /* Hide default marker for Firefox */
+    display: none;
+}
+
+.faq-icon {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* Tailwind text-gray-500 */
+    transition: transform 0.3s ease;
+    margin-left: 0.5rem; /* Space between text and icon */
+}
+
+/* The .group-open:rotate-180 class is a Tailwind utility 
+   applied directly in the HTML for the icon rotation when details is open.
+   If you don't have 'group-open' variants enabled in Tailwind, you can use this: */
+
+
+.faq-question:hover .faq-icon {
+    color: #3b82f6; /* Tailwind text-blue-500 on hover */
+}
+
+.faq-answer {
+    padding: 0rem 1.5rem 1.5rem 1.5rem; /* Px-6 Pb-6, top padding comes from summary */
+    color: #4b5563; /* Tailwind text-gray-600 */
+    line-height: 1.625; /* Tailwind leading-relaxed */
+    font-size: 0.95rem;
+    border-top: 1px solid #f3f4f6; /* Tailwind border-gray-100 for a subtle separator */
+}
+
+.faq-answer p {
+    margin-bottom: 0; /* Remove default paragraph margin if not needed within answer */
+}
+
+.faq-answer p:not(:last-child) {
+    margin-bottom: 1rem; /* Space between paragraphs if answer has multiple */
+}
+
+/* === Contact Form Section Styles === */
+
+/* .contact-wrapper and grid layout are primarily handled by Tailwind classes in HTML */
+
+.contact-form {
+    background-color: #ffffff;
+    padding: 2rem 1.5rem; /* p-8 md:p-10 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .contact-form {
+        padding: 2.5rem;
+    }
+}
+
+
+.form-label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 600; /* font-semibold */
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem; /* py-3 px-4 */
+    font-size: 1rem; /* text-base */
+    color: #1f2937; /* text-gray-900 */
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-input::placeholder {
+    color: #9ca3af; /* placeholder-gray-400 */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #fb923c; /* Tailwind orange-400 for focus */
+    box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.3); /* Ring effect with orange */
+    background-color: #ffffff;
+}
+
+textarea.form-input {
+    resize: vertical; /* Allow vertical resize, disable horizontal */
+    min-height: 120px;
+}
+
+.submit-button {
+    display: inline-block;
+    background-color: #f97316; /* Tailwind orange-500 (normal state) */
+    color: #ffffff;
+    font-size: 1rem; /* text-base */
+    font-weight: 600; /* font-semibold */
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border: none;
+    border-radius: 0.375rem; /* rounded-md */
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #16a34a; /* Tailwind green-600 (hover state) */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+.submit-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* For Netlify's hidden honeypot field */
+.hidden {
+    display: none;
+}
+
+.direct-contact-info i {
+    /* color is set by Tailwind class in HTML */
+    /* margin-right is set by Tailwind class in HTML */
+    vertical-align: middle;
+}
+
+/* === Footer Section Styles === */
+
+/* .footer-main background and base text color are handled by Tailwind classes in HTML */
+
+.footer-column {
+    margin-bottom: 1.5rem; /* mb-6, provides spacing when stacked on small screens */
+}
+
+.footer-column-title {
+    font-size: 1.25rem; /* text-lg */
+    font-weight: 700; /* font-bold */
+    color: #ffffff; /* White title */
+    margin-bottom: 1rem; /* mb-4 */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-address {
+    font-size: 1rem; /* Slightly smaller than base */
+    line-height: 1.6;
+    color: #bee3f8; /* text-blue-200 */
+}
+
+.footer-contact-item {
+    font-size: 0.9rem;
+    color: #bee3f8; /* text-blue-200 */
+    margin-bottom: 0.35rem;
+}
+
+.footer-contact-item .footer-icon {
+    margin-right: 0.5rem; /* mr-2 */
+    color: #06ddf5; /* Tailwind orange-500 for icons */
+    width: 1em; /* Ensure icons align well if they vary in width */
+    text-align: center;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.footer-link {
+    color: #bee3f8; /* text-blue-200 */
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-link:hover {
+    color: #05fef6; /* Tailwind amber-400 or choose an orange */
+    padding-left: 0.25rem; /* Slight indent on hover */
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center; /* Center icons in mobile stacked view */
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .footer-social-icons {
+        justify-content: flex-start; /* Align to left on larger screens */
+    }
+}
+
+.social-icon-link {
+    display: inline-flex; /* Use flex to center icon within the circle/square */
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem; /* w-9 */
+    height: 2.25rem; /* h-9 */
+    margin-right: 0.75rem; /* mr-3 */
+    color: #1e3a8a; /* Dark blue, for icon color inside the shape */
+    background-color: #e0e7ff; /* Light indigo background for icons */
+    border-radius: 50%; /* rounded-full */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem; /* Adjust icon size if needed */
+}
+
+.social-icon-link:last-child {
+    margin-right: 0;
+}
+
+.social-icon-link:hover {
+    background-color: #f97316; /* Tailwind orange-500 on hover */
+    color: #ffffff; /* White icon on hover */
+    transform: scale(1.1) translateY(-2px);
+}
+
+/* Specific hover colors for social icons (optional, can be too much)
+.social-icon-link.facebook:hover { background-color: #3b5998; color: white; }
+.social-icon-link.twitter:hover { background-color: #1da1f2; color: white; }
+.social-icon-link.linkedin:hover { background-color: #0077b5; color: white; }
+.social-icon-link.instagram:hover { background-color: #e4405f; color: white; }
+*/
+
+
+
+/* Ensure the currentYear span is handled by your existing script */
