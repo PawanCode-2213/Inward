@@ -475,8 +475,8 @@ textarea.form-input {
 
 .submit-button {
     display: inline-block;
-    background-color: #f97316; /* Tailwind Blue #6ea8fe-500 (normal state) */
-    color: #ffffff;
+    background-color: #6ea8fe; /* Tailwind Blue #6ea8fe-500 (normal state) */
+    color: black;
     font-size: 1rem; /* text-base */
     font-weight: 600; /* font-semibold */
     padding: 0.75rem 2rem; /* py-3 px-8 */
