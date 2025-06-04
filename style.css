@@ -34,8 +34,8 @@ body {
 }
 
 .logo_image img {
-    width: 60px; /* As per your HTML */
-    height: 60px; /* As per your HTML */
+    width: 50px; /* As per your HTML */
+    height: 50px; /* As per your HTML */
     margin-right: 10px; /* Space between image and name */
 }
 
@@ -44,7 +44,7 @@ body {
 /* In your style.css */
 .logoname {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.4em;
+    font-size: 1.25em;
     font-weight: 800;
     /* Gradient text */
     background: linear-gradient(45deg, #4d05ac, #49c8f3); /* Blue gradient */
