@@ -1,118 +1,119 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const navMenu = document.querySelector(".nav-links");
-    const menuToggle = document.getElementById("menuToggle");
-    const menuClose = document.getElementById("menuClose");
-    const navLinks = document.querySelectorAll('.nav-links a');
+document.addEventListener("DOMContentLoaded", function () {
+  const navMenu = document.querySelector(".nav-links");
+  const menuToggle = document.getElementById("menuToggle");
+  const menuClose = document.getElementById("menuClose");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-    function showMenu() {
+  function showMenu() {
     if (window.innerWidth <= 768) {
-        navMenu.classList.add("active");
-        menuToggle.style.display = "none";
-        menuClose.style.display = "block";
+      navMenu.classList.add("active");
+      menuToggle.style.display = "none";
+      menuClose.style.display = "block";
     }
-}
+  }
 
-function hideMenu() {
+  function hideMenu() {
     if (window.innerWidth <= 768) {
-        navMenu.classList.remove("active");
-        menuToggle.style.display = "block";
-        menuClose.style.display = "none";
+      navMenu.classList.remove("active");
+      menuToggle.style.display = "block";
+      menuClose.style.display = "none";
     }
-}
+  }
 
+  menuToggle.addEventListener("click", function (event) {
+    event.stopPropagation();
+    showMenu();
+  });
 
-    menuToggle.addEventListener("click", function(event) {
-        event.stopPropagation();
-        showMenu();
+  menuClose.addEventListener("click", function (event) {
+    event.stopPropagation();
+    hideMenu();
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      hideMenu();
     });
+  });
 
-    menuClose.addEventListener("click", function(event) {
-        event.stopPropagation();
-        hideMenu();
-    });
+  document.addEventListener("click", function () {
+    hideMenu();
+  });
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function() {
-            hideMenu();
-        });
-    });
+  navMenu.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
 
-    document.addEventListener("click", function() {
-        hideMenu();
-    });
-
-    navMenu.addEventListener("click", function(event) {
-        event.stopPropagation();
-    });
-
-    window.addEventListener("scroll", function() {
-        if (navMenu.classList.contains("active")) {
-            hideMenu();
-        }
-    });
+  window.addEventListener("scroll", function () {
+    if (navMenu.classList.contains("active")) {
+      hideMenu();
+    }
+  });
 });
 
 // === End of Mobile Menu Toggle Script ===
 
 // Set current year in footer
-const currentYearElement = document.getElementById('currentYear');
+const currentYearElement = document.getElementById("currentYear");
 if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
+  currentYearElement.textContent = new Date().getFullYear();
 } else {
-    console.warn('Element with ID "currentYear" not found for footer.');
+  console.warn('Element with ID "currentYear" not found for footer.');
 }
 
-
 // === Hero Section Animation Script (from your previous version) ===
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const h1 = entry.target.querySelector('h1');
-            const p = entry.target.querySelector('p.text-lg');
-            const aTag = entry.target.querySelector('a.inline-block');
-            const img = entry.target.querySelector('img.rounded-xl');
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const h1 = entry.target.querySelector("h1");
+        const p = entry.target.querySelector("p.text-lg");
+        const aTag = entry.target.querySelector("a.inline-block");
+        const img = entry.target.querySelector("img.rounded-xl");
 
-            if (h1 && !h1.classList.contains('visible')) { 
-                h1.classList.add('fade-in-up');
-                setTimeout(() => h1.classList.add('visible'), 50);
-                h1.style.transitionDelay = '0.1s';
-            }
-            if (p && !p.classList.contains('visible')) { 
-                p.classList.add('fade-in-up');
-                setTimeout(() => p.classList.add('visible'), 50);
-                p.style.transitionDelay = '0.3s';
-            }
-            if (aTag && !aTag.classList.contains('visible')) { 
-                aTag.classList.add('fade-in-up');
-                setTimeout(() => aTag.classList.add('visible'), 50);
-                aTag.style.transitionDelay = '0.5s';
-            }
-            if (img && !img.classList.contains('visible')) { 
-                img.classList.add('fade-in-up');
-                setTimeout(() => img.classList.add('visible'), 50);
-                img.style.transitionDelay = '0.2s';
-            }
-            
-            observer.unobserve(entry.target); 
+        if (h1 && !h1.classList.contains("visible")) {
+          h1.classList.add("fade-in-up");
+          setTimeout(() => h1.classList.add("visible"), 50);
+          h1.style.transitionDelay = "0.1s";
         }
-    });
-}, { threshold: 0.1 }); 
+        if (p && !p.classList.contains("visible")) {
+          p.classList.add("fade-in-up");
+          setTimeout(() => p.classList.add("visible"), 50);
+          p.style.transitionDelay = "0.3s";
+        }
+        if (aTag && !aTag.classList.contains("visible")) {
+          aTag.classList.add("fade-in-up");
+          setTimeout(() => aTag.classList.add("visible"), 50);
+          aTag.style.transitionDelay = "0.5s";
+        }
+        if (img && !img.classList.contains("visible")) {
+          img.classList.add("fade-in-up");
+          setTimeout(() => img.classList.add("visible"), 50);
+          img.style.transitionDelay = "0.2s";
+        }
 
-const heroSection = document.querySelector('.hero-section');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+const heroSection = document.querySelector(".hero-section");
 if (heroSection) {
-    const elementsToAnimate = [
-        heroSection.querySelector('h1'),
-        heroSection.querySelector('p.text-lg'),
-        heroSection.querySelector('a.inline-block'),
-        heroSection.querySelector('img.rounded-xl')
-    ];
-    
-    elementsToAnimate.forEach(el => {
-        if (el && !el.classList.contains('visible')) { 
-            el.classList.add('fade-in-up');
-        }
-    });
-    observer.observe(heroSection);
+  const elementsToAnimate = [
+    heroSection.querySelector("h1"),
+    heroSection.querySelector("p.text-lg"),
+    heroSection.querySelector("a.inline-block"),
+    heroSection.querySelector("img.rounded-xl"),
+  ];
+
+  elementsToAnimate.forEach((el) => {
+    if (el && !el.classList.contains("visible")) {
+      el.classList.add("fade-in-up");
+    }
+  });
+  observer.observe(heroSection);
 } else {
-    console.warn('Hero section (.hero-section) not found for animations.');
+  console.warn("Hero section (.hero-section) not found for animations.");
 }
