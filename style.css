@@ -47,13 +47,14 @@ body {
     font-size: 2.1em;
     font-weight: 900;
     /* Gradient text */
-    background: linear-gradient(45deg, #4d05ac, #49c8f3); /* Blue gradient */
+    /* background: linear-gradient(45deg, #4d05ac, #49c8f3); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-emphasis-color: transparent; /* For non-webkit browsers */
+    text-emphasis-color: transparent;  */
     display: inline-block; /* Necessary for background-clip to work well */
     padding-left: 10px;
+    color: red;
 
 }
 
@@ -114,6 +115,7 @@ body {
 @media (max-width: 768px) {
     .logoname {
         font-size: 1.2em; /* Slightly smaller logo name on mobile */
+        color: red;
     }
     .nav-links {
         position: fixed;
