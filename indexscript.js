@@ -117,3 +117,77 @@ if (heroSection) {
 } else {
   console.warn("Hero section (.hero-section) not found for animations.");
 }
+
+
+// Slider
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slidesContainer = document.querySelector('.slides-container');
+        const slides = document.querySelectorAll('.slide');
+        const nextBtn = document.querySelector('.slider-nav.next');
+        const prevBtn = document.querySelector('.slider-nav.prev');
+        const dotsContainer = document.querySelector('.slider-dots');
+
+        if (!slidesContainer) return; // Exit if slider isn't on the page
+
+        let currentIndex = 0;
+        let slideInterval;
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            dot.addEventListener('click', () => {
+                goToSlide(i);
+                resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function goToSlide(index) {
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            const newIndex = (currentIndex + 1) % slides.length;
+            goToSlide(newIndex);
+        }
+
+        function prevSlide() {
+            const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+            goToSlide(newIndex);
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        // Event Listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetInterval();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetInterval();
+            });
+        }
+
+        // Initial setup
+        goToSlide(0);
+        startInterval();
+    });

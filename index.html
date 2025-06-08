@@ -59,30 +59,48 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="hero-section bg-gradient-to-br from-blue-50 via-white to-sky-50 py-16 md:py-24 lg:py-32 pt-24 md:pt-32 lg:pt-40">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 lg:w-3/5 text-center md:text-left mb-12 md:mb-0 md:pr-12">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-blue-700 leading-tight mb-6">
-                            Your Trusted Security Partner<span class="text-black"> Inward National Security Agency</span>
-                        </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
-                            Inward National Security Agency provides expert Security Guards, Gunmen, Supervisors, and Armed Guards. Find peace of mind with our unparalleled support and tailored safety solutions.
-                        </p>
-                        <a href="contact.html" class="inline-block bg-blue-700 hover:bg-[#16a34a] text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5">
-                            Get a Free Security Quote
-                        </a>
-                    </div>
+       <section id="home" class="hero-section-slider-wrapper">
 
-                    <div class="md:w-1/2 lg:w-2/5 flex justify-center md:justify-end">
-                        <img src="Images/Hero Image.png" 
-                             alt="Professional security services by Inward National Security Agency" 
-                             class="rounded-xl shadow-2xl w-full max-w-md md:max-w-none object-cover"
-                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/E2E8F0/4A5568?text=Security+Image';">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Slider Container -->
+<div class="hero-slider-aspect-ratio">
+  <div class="hero-slider">
+    <div class="slides-container">
+      <div class="slide">
+        <img src="Images/Slide 2.png" alt="Security team">
+      </div>
+      <div class="slide">
+        <img src="Images/Slide 1.png" alt="Monitoring room">
+      </div>
+      <div class="slide">
+        <img src="Images/slide 3.png"
+             alt="Guard on duty"
+             onerror="this.onerror=null; this.src='https://placehold.co/1920x800/374151/ffffff?text=Vigilant+Protection';">
+      </div>
+    </div>
+    <button class="slider-nav prev" aria-label="Previous slide">&#10094;</button>
+    <button class="slider-nav next" aria-label="Next slide">&#10095;</button>
+    <div class="slider-dots"></div>
+  </div>
+</div>
+
+
+    <!-- Text Content Below Slider -->
+    <div class="hero-text-content container mx-auto px-6 text-center">
+        <h1 class="text-2xl md:text-3xl lg:text-3xl font-extrabold text-blue-800 leading-tight">
+            Your Trusted Security Partner
+        </h1>
+        <p class="text-2xl md:text-3xl font-bold text-[#DC2626] tracking-wide my-4 font-montserrat">
+            Inward National Security Agency
+        </p>
+        <p class="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Inward National Security Agency provides expert Security Guards, Gunmen, Supervisors, and Armed Guards. Find peace of mind with our unparalleled support and tailored safety solutions.
+        </p>
+        <a href="contact.html" class="inline-block bg-blue-700 hover:bg-[#16a34a] text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5">
+            Get a Free Security Quote
+        </a>
+    </div>
+
+</section>
 <!--Our Service section-->
 
 <section id="services" class="py-16 bg-blue-700">
@@ -93,7 +111,7 @@
 
             <div class="service-card">
                 <div class="service-card-image-container">
-                    <img src="Images/SecurityGUARDS.jpeg" 
+                    <img src="Images/SecurityGuard.png" 
                          alt="Professional Security Guard Services" 
                          class="service-card-image">
                 </div>
