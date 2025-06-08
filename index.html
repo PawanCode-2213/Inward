@@ -43,17 +43,17 @@
                     <img src="Images/Logo.png" alt="Inward National Security Agency Logo" 
                      onerror="this.onerror=null; this.src='https://placehold.co/50x50/2A6CB4/FFFFFF?text=INSA';">
                 </div>
-                
+                <div class="logoname">Inward National Security Agency</div>
             </a>
-            <div class="logoname">Inward National Security Agency</div>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="career.html">Careers</a></li>
             </ul>
-            <a href="#contact" class="contact-button">Contact</a>
+            <a href="contact.html" class="contact-button">Contact</a>
             <i class="fas fa-bars menu-icon" id="menuToggle"></i>
             <i class="fas fa-times menu-icon" id="menuClose"></i>
         </nav>
@@ -69,7 +69,7 @@
                         <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
                             Inward National Security Agency provides expert Security Guards, Gunmen, Supervisors, and Armed Guards. Find peace of mind with our unparalleled support and tailored safety solutions.
                         </p>
-                        <a href="#contact" class="inline-block bg-[#6ea8fe] hover:bg-[#16a34a] text-black font-semibold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5">
+                        <a href="contact.html" class="inline-block bg-blue-700 hover:bg-[#16a34a] text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-0.5">
                             Get a Free Security Quote
                         </a>
                     </div>
@@ -83,123 +83,141 @@
                 </div>
             </div>
         </section>
+<!--Our Service section-->
 
-  <section id="services" class="py-16 bg-[#6ea8fe]">
+<section id="services" class="py-16 bg-blue-700">
     <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-extrabold text-black mb-12">Our Core Services</h2>
+        <h2 class="text-3xl font-extrabold text-white mb-12">Our Core Services</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 service-card-grid">
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-user-shield"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/SecurityGuard.png" 
+                         alt="Professional Security Guard Services" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">Security Guard Services</h3>
-                <p class="service-card-description">
-                    Professional, SIA-licensed guards for diverse environments including corporate, residential, and retail sectors. Ensuring safety and a strong visible deterrent.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Security Guard Services</h3>
+                    <p class="service-card-description">
+                        Professional, licensed guards for diverse environments including corporate, residential, and retail sectors. Ensuring safety and a strong visible deterrent.
+                    </p>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-bullseye"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/GUNMAN1.jpg" 
+                         alt="Specialized GunMan Services" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">GunMan Services</h3>
-                <p class="service-card-description">
-                    Highly trained and licensed gunmen for specialized security needs, personal protection, and safeguarding high-value assets with utmost discretion and professionalism.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">GunMan Services</h3>
+                    <p class="service-card-description">
+                        Highly trained and licensed gunmen for specialized security needs, personal protection, and safeguarding high-value assets with utmost discretion.
+                    </p>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-user-tie"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/Supervisor.jpeg" 
+                         alt="Experienced Security Supervisors" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">Security Supervisors</h3>
-                <p class="service-card-description">
-                    Experienced supervisors ensuring operational excellence, quality control, on-site leadership, and effective communication for all security deployments.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Security Supervisors</h3>
+                    <p class="service-card-description">
+                        Experienced supervisors ensuring operational excellence, quality control, on-site leadership, and effective communication for all security deployments.
+                    </p>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-shield-halved"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/Armed Guards.jpg" 
+                         alt="Professional Armed Guards" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">Armed Guards</h3>
-                <p class="service-card-description">
-                    Top-tier armed guards for high-security environments and critical infrastructure protection, operating with strict compliance and advanced training.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Armed Guards</h3>
+                    <p class="service-card-description">
+                        Top-tier armed guards for high-security environments and critical infrastructure protection, operating with strict compliance and advanced training.
+                    </p>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-users-line"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/Event Security.png" 
+                         alt="Event Security Management" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">Event Security Management</h3>
-                <p class="service-card-description">
-                    Comprehensive security for public and private events, including crowd management, access control, and emergency response planning for a safe experience.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Event Security Management</h3>
+                    <p class="service-card-description">
+                        Comprehensive security for public and private events, including crowd management, access control, and emergency response planning for a safe experience.
+                    </p>
+                </div>
             </div>
 
             <div class="service-card">
-                <div class="service-card-icon">
-                    <i class="fas fa-user-check"></i>
+                <div class="service-card-image-container">
+                    <img src="Images/Bouncer.png" 
+                         alt="Professional Bouncer Services" 
+                         class="service-card-image">
                 </div>
-                <h3 class="service-card-title">Bouncer Services</h3>
-                <p class="service-card-description">
-                    Professional and courteous bouncers for venues requiring skilled personnel to maintain a secure, orderly, and pleasant atmosphere for all guests.
-                </p>
+                <div class="service-card-content">
+                    <h3 class="service-card-title">Bouncer Services</h3>
+                    <p class="service-card-description">
+                        Professional and courteous bouncers for venues requiring skilled personnel to maintain a secure, orderly, and pleasant atmosphere for all guests.
+                    </p>
+                </div>
             </div>
-
+        </div>
+        <div class="mt-16">
+         <a href="services.html" 
+          class="inline-block bg-black hover:bg-[#16a34a] text-white font-bold py-3 px-10 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+           Learn More About Our Services
+        </a>
         </div>
     </div>
 </section>
+
 <!--This is about us section-->
 
-<section id="about" class="py-16 bg-green-50">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12">About Us</h2>
+<section id="about" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <!-- Main layout grid for image and content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div class="about-content-wrapper grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
-            
-            <div class="about-block flex flex-col"> <div> <h3 class="about-block-title">
-                        <i class="fas fa-bullseye-arrow about-icon"></i>
-                        Our Mission
-                    </h3>
-                    <p class="about-block-text">
-                        To provide unparalleled security services that ensure the safety and peace of mind of our clients throughout. We are committed to delivering professional, reliable, and tailored security solutions.
-                    </p>
-                </div>
+            <!-- Column 1: Image -->
+            <div class="about-snippet-image-column">
+                <img src="Images/AboutUs.png" 
+                     alt="Inward National Security Agency Team" 
+                     class="rounded-lg shadow-2xl w-full h-full object-cover">
+                     <!-- ** IMPORTANT: Replace this src with a high-quality photo of your team, 
+                          office, or professional security personnel. -->
             </div>
 
-            <div class="about-block flex flex-col">
-                <div>
-                    <h3 class="about-block-title">
-                        <i class="fas fa-gem about-icon"></i>
-                        Our Values
-                    </h3>
-                    <ul class="about-values-list">
-                        <li><i class="fas fa-check-circle value-icon"></i> Professionalism</li>
-                        <li><i class="fas fa-check-circle value-icon"></i> Integrity</li>
-                        <li><i class="fas fa-check-circle value-icon"></i> Vigilance</li>
-                        <li><i class="fas fa-check-circle value-icon"></i> Client-Centricity</li>
-                    </ul>
-                </div>
+            <!-- Column 2: Content -->
+            <div class="about-snippet-content-column text-center lg:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Your Trusted Security Partner
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Founded on the principles of integrity, vigilance, and unwavering commitment, Inward National Security Agency has grown to be a leading security provider in the region. We are dedicated to ensuring the safety and peace of mind of our clients through meticulously planned and professionally executed security solutions.
+                </p>
+                <p class="text-gray-600 mb-10 leading-relaxed font-medium">
+                    Our team of highly-trained personnel is our greatest asset, bringing local expertise and a proactive approach to every assignment.
+                </p>
+                <a href="about.html" 
+                   class="inline-block bg-blue-700 hover:bg-[#16a34a] text-white font-bold py-3 px-10 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    Read Our Full Story
+                </a>
             </div>
 
-            <div class="about-block flex flex-col">
-                <div>
-                    <h3 class="about-block-title">
-                        <i class="fas fa-chart-line about-icon"></i>
-                        Our Goals
-                    </h3>
-                    <p class="about-block-text">
-                        To be the leading security provider by consistently exceeding client expectations, investing in our personnel, and fostering long-term relationships built on trust.
-                    </p>
-                </div>
-            </div>
         </div>
-        
-
     </div>
 </section>
 
@@ -277,8 +295,8 @@
 
 <!--FAAQ-->
 
-<section id="faq" class="py-16 bg-green-50"> <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12 md:mb-16 text-center">Frequently Asked Questions</h2>
+<section id="faq" class="py-16 bg-gradient-to-br from-blue-800 to-blue-50">
+        <h2 class="text-3xl font-bold text-white mb-12 md:mb-16 text-center">Frequently Asked Questions</h2>
 
         <div class="faq-list max-w-3xl mx-auto">
 
@@ -302,7 +320,7 @@
                     </span>
                 </summary>
                 <div class="faq-answer">
-                    <p>Our primary operational area is throughout Himachal Pradesh, covering major towns, cities, and even remote locations. Our team possesses extensive local knowledge and resources to serve clients effectively across the diverse terrains of the state.</p>
+                    <p>Our primary operational area is throughout Himachal Pradesh, covering major towns, cities, hydro power projects and even remote locations. Our team possesses extensive local knowledge and resources to serve clients effectively across the diverse terrains of the state.</p>
                 </div>
             </details>
 
@@ -432,7 +450,7 @@
                 <h4 class="footer-column-title">Inward National Security Agency</h4>
                 <address class="footer-address not-italic">
                     Reg. Office: Village Bhatwada Post office Rari <br>
-                    City Chamba, Himachal Pradesh, ,<br> PIN Code 176311<br>
+                    Chamba, Himachal Pradesh, ,<br> Pin Code 176311<br>
                 </address>
                 <p class="footer-contact-item mt-3">
                     <i class="fas fa-phone-alt footer-icon"></i> <a href="tel:+917876807395" class="footer-link hover:text-white">+917876807395</a>
@@ -449,7 +467,7 @@
                     <li><a href="#about" class="footer-link">About Us</a></li>
                     <li><a href="#services" class="footer-link">Services</a></li>
                     <li><a href="#why-choose-us" class="footer-link">Why Choose Us</a></li>
-                    <li><a href="#faq" class="footer-link">FAQ</a></li>
+                    <li><a href="career.html" class="footer-link">Careers</a></li>
                     <li><a href="#contact" class="footer-link">Contact Us</a></li>
                     </ul>
             </div>
