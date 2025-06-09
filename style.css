@@ -541,8 +541,13 @@ body {
     /* Remove existing background color if you want image to be primary background */
     /* background-color: #ffffff; /* This was from your class bg-white, it will be overridden by bg-image */
 
+<<<<<<< HEAD
     background-image: url('Images/BGGT.png'); 
     background-size: cover; 
+=======
+    background-image: url('Images/BGGT.png'); /* ** REPLACE THIS PATH ** */
+    background-size: cover; /* Makes the image cover the entire section, cropping if necessary */
+>>>>>>> 235b4634d405935233786bd651720d0e20f32986
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Optional: Creates a parallax scrolling effect */
