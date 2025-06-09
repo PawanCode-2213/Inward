@@ -34,8 +34,8 @@ body {
 }
 
 .logo_image img {
-    width: 60px; /* As per your HTML */
-    height: 60px; /* As per your HTML */
+    width: 60px; 
+    height: 60px;
     margin-right: 10px; /* Space between image and name */
 }
 
@@ -44,14 +44,8 @@ body {
 /* In your style.css */
 .logoname {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2.1em;
+    font-size: 1.9em;
     font-weight: 900;
-    /* Gradient text */
-    /* background: linear-gradient(45deg, #4d05ac, #49c8f3); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-emphasis-color: transparent;  */
     display: inline-block; /* Necessary for background-clip to work well */
     padding-left: 10px;
     color: red;
@@ -547,8 +541,8 @@ body {
     /* Remove existing background color if you want image to be primary background */
     /* background-color: #ffffff; /* This was from your class bg-white, it will be overridden by bg-image */
 
-    background-image: url('Images/BGGT.jpg'); /* ** REPLACE THIS PATH ** */
-    background-size: cover; /* Makes the image cover the entire section, cropping if necessary */
+    background-image: url('Images/BGGT.png'); 
+    background-size: cover; 
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-attachment: fixed; /* Optional: Creates a parallax scrolling effect */
